@@ -36,7 +36,7 @@ func (ac *conn) Prepare(query string) (driver.Stmt, error) {
 	panic("deprecated: use PrepareContext")
 }
 
-// PrepareContext is prepares a query.
+// PrepareContext prepares a query.
 func (ac *conn) PrepareContext(ctx context.Context, query string) (driver.Stmt, error) {
 	return &stmt{
 		ac:    ac,
@@ -76,7 +76,7 @@ func (ac *conn) QueryContext(ctx context.Context, query string, args []driver.Na
 			}
 			continue
 		}
-		var f *rdsdataservice.Field //
+		var f *rdsdataservice.Field
 		switch t := value.(type) {
 		case string:
 			f = &rdsdataservice.Field{StringValue: aws.String(t)}
