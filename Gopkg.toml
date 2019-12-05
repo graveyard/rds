@@ -1,0 +1,17 @@
+required = ["github.com/golang/mock/mockgen"]
+
+[[constraint]]
+  version = "1.3.0"
+  name = "github.com/stretchr/testify"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/golang/mock"
+
+[[constraint]]
+  name = "github.com/aws/aws-sdk-go"
+  version = "1.23.14"
+
+[prune]
+  go-tests = true
+  unused-packages = true
